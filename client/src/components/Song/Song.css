@@ -1,0 +1,16 @@
+.Song {
+    display: flex;
+    justify-content: space-between;
+}
+
+.songInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 10px;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}

@@ -1,0 +1,5 @@
+.playlist {
+    margin: 200px;
+    display: flexbox;
+    flex-direction: column;
+}

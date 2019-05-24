@@ -1,0 +1,38 @@
+/* Universal styles */
+html {
+  font-size: 18px;
+  background-color: linear-gradient('#FCA5F1', '#B5FFFF');
+}
+
+@media only screen and (max-width: 560px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+input:focus {
+  outline: none;
+}
+
+.App {
+  display: flexbox;
+  text-align: center;
+  background: linear-gradient(rgb(224, 127, 148), rgb(247, 206, 117));
+}
+
+.header {
+  top: 0px;
+  bottom: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.optionsBarContainer {
+
+}
+
+.playlistContainer {
+
+}
+

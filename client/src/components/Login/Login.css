@@ -1,0 +1,18 @@
+.login {
+    text-align: center;
+}
+
+.login a {
+    text-decoration: none;
+    border-radius: 4px;
+    padding: .72rem 1.7rem;
+    color: #ffffff;
+    background-color: pink;
+    font-weight: 600;
+    transition: background-color .5s;
+}
+
+.login a:hover {
+    cursor: pointer;
+    background-color: lightblue;
+}
