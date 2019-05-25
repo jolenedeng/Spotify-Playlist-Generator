@@ -1,5 +1,7 @@
 import React from 'react';
 import './Song.css';
+import pause from './icons/pause.svg';
+import play from './icons/play.svg';
 import * as image from './sample-image.jpg';
 
 class Song extends React.Component {
@@ -9,14 +11,18 @@ class Song extends React.Component {
     }
 
     render() {
+        const { song } = this.props;
+
         return (
             <div className="Song">
-                <img src={image} alt="Album cover"/>
+                <img src={song.albumSrc} alt="Album cover"/>
                 <div className="songInfo">
-                    <p className="trackName">Track</p>
-                    <p className="artistName">Artst</p>
+                    <p className="trackName">{song.name}</p>
+                    <p className="artistName">{song.artist}</p>
                 </div>
-                <button className="playButton">Play</button>
+                <div className="btnContainer">
+                <button className="btn"></button>
+                </div>
             </div>
         )
     }

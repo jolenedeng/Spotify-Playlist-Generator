@@ -1,7 +1,16 @@
-/* Universal styles */
 html {
+  
   font-size: 18px;
-  background-color: linear-gradient('#FCA5F1', '#B5FFFF');
+  font-family: Nunito;
+  background: linear-gradient(#FF8C8C, #F1EAB9);
+  background-size: auto;
+  overflow-x: hidden;
+}
+
+
+html, body {
+  margin: 0;
+  height: 100%;
 }
 
 @media only screen and (max-width: 560px) {
@@ -17,22 +26,37 @@ input:focus {
 .App {
   display: flexbox;
   text-align: center;
-  background: linear-gradient(rgb(224, 127, 148), rgb(247, 206, 117));
 }
 
 .header {
   top: 0px;
   bottom: 0px;
-  margin: 0px;
+  margin: 20px;
   display: flex;
   flex-direction: row-reverse;
 }
 
 .optionsBarContainer {
-
+  margin: 20px;
 }
 
 .playlistContainer {
-
+  /* padding: 100px 300px; */
+  margin: 100px 200px 40px 200px;
 }
 
+
+.footer {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  margin: 100px;
+}

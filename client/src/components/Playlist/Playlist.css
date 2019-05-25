@@ -1,5 +1,11 @@
 .playlist {
-    margin: 200px;
     display: flexbox;
     flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
 }
+
+.playlistButton {
+    margin: 30px;
+  }

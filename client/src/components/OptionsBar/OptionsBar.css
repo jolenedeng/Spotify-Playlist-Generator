@@ -1,5 +1,23 @@
+h1 {
+    color: white;
+    font-size: 30px;
+    padding: .66rem 0;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.optionsBar {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1.0rem;
+    color: #fff;
+}
+
 .optionsBar-options ul {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 2.22rem;
     color: #ffffff;
@@ -22,13 +40,13 @@
 }
 
 .optionsBar-options li:hover {
-    background-color: plum;
+    background-color:palevioletred;
 }
 
 .optionsBar-options li.active,
 .optionsBar-options li.active:hover {
-    border-bottom: 1px solid white;
-    color: #f0c36c;
+    border: 1px solid white;
+    background-color: palevioletred;;
 }
 
 .optionsBar-submit {
@@ -38,7 +56,7 @@
 
 .optionsBar-submit a{
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 2em;
     padding: .72rem 1.7rem;
     color: #ffffff;
     background-color: pink;
@@ -48,7 +66,7 @@
 
 .optionsBar-submit a:hover{
     cursor: pointer;
-    background-color: lightblue;
+    background: linear-gradient(to left,#EA8D8D,#A890FE);
 }
 
 

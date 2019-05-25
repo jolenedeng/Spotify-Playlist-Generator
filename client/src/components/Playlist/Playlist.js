@@ -4,12 +4,9 @@ import SavePlaylistButton from '../SavePlaylistButton/SavePlaylistButton';
 import './Playlist.css';
 
 class Playlist extends React.Component {
-    // Playlist information: Save playlist to account
+    // todo: Save playlist to account
     constructor(props) {
         super(props);
-        this.state = {
-            songs: []
-        }
     }
 
     addPlaylistToAccount() {
@@ -17,14 +14,23 @@ class Playlist extends React.Component {
     }
     
     render() {
-        return (
-            <div className="playlist">
-                 {this.props.songs.map((song) => {
-                        return <Song key={song.toString()} song={song}/>
-                    })}
-                < SavePlaylistButton addPlaylistToAccount={this.addPlaylistToAccount}/>
-            </div>
-        )
+        const { songs } = this.props;
+
+        if (songs.length > 0) {
+            return (
+                
+                <div className="playlist">
+                          {songs.map((song) => {
+                            return <Song key={song.id} song={song}/>
+                          })}
+                     <div className="playlistButton">
+                     < SavePlaylistButton />
+                     </div>   
+                </div>
+
+            )
+        }
+        else return null;
     }
 }
 
