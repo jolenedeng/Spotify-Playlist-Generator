@@ -52,13 +52,14 @@ input:focus {
 
 
 .footer {
-  background-color: antiquewhite;
+  background-color: #FF8C8C;
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-start;
   position: fixed;
   left: 0;
   bottom: 0;
+  height: 100px;
   width: 100%;
 }
 

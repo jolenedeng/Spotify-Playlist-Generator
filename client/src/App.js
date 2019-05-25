@@ -12,14 +12,36 @@ const spotifyApi = new SpotifyWebApi();
 class App extends React.Component {
    constructor(props) {
     super(props);
-    const params = this.getHashParams();
-    spotifyApi.setAccessToken(params.access_token);
     this.state = {
+      user_id: "",
+      user_name: "",
+      loggedIn: false,
       genres: [],
-      songs: [],
-      loggedIn: params.access_token ? true : false
+      songs: []
       }
     }
+
+    componentDidMount = () => {
+      const params = this.getHashParams();
+      spotifyApi.setAccessToken(params.access_token);
+
+      if (params.error) {
+        alert('There was an error during the authentication');
+      } 
+      else if (params.access_token) {
+        this.setState({loggedIn: true});
+      }  
+      // Get current user's information
+      spotifyApi.getMe()
+        .then ((data) => {
+          this.setState({
+            user_name: data.display_name, 
+            user_id: data.id
+          })
+          console.log(data);   
+        })
+      }
+      
 
     getRecommendations = (selected) => {
       let options = {
@@ -49,14 +71,13 @@ class App extends React.Component {
       e.preventDefault();
 
       if (this.state.songs.length > 0) {
-        // todo: Get user id
-        const userId = "";
+        const user_id = this.state.user_id;
         const body = {
           name: "My perfect playlist ♡",
           description: `A perfect mix of... ${this.state.genres.join(', ')}!`
         } 
 
-        spotifyApi.createPlaylist(userId, body)
+        spotifyApi.createPlaylist(user_id, body)
           .then( (data) => {
             let id = data.id;
             let uris = this.state.songs.map( song => song.uri );

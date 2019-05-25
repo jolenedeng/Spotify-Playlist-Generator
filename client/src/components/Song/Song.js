@@ -1,7 +1,6 @@
 import React from 'react';
 import './Song.css';
-import pause from './icons/pause.svg';
-import play from './icons/play.svg';
+import pausePlay from './icons/pause-play.svg';
 
 class Song extends React.Component {
     constructor(props) {
@@ -36,7 +35,7 @@ class Song extends React.Component {
                 </div>
                 <div className="btnContainer">
                 <button className="btn" onClick={this.handleClick.bind(this, song.uri)}>
-                    {this.state.isPlaying ? <img className="btnImg" src={pause} alt="pause"/> : <img className="btnImg" src={play} alt="play"/>}
+                    <img className="btnImg" src={pausePlay} alt="pause/play"/>
                 </button>
                 </div>
             </div>
