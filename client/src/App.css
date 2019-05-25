@@ -1,8 +1,6 @@
 html {
-  
   font-size: 18px;
   font-family: Nunito;
-  background: linear-gradient(#FF8C8C, #F1EAB9);
   background-size: auto;
   overflow-x: hidden;
 }
@@ -11,6 +9,12 @@ html {
 html, body {
   margin: 0;
   height: 100%;
+}
+
+body {
+  background: linear-gradient(#FF8C8C, #F1EAB9);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 @media only screen and (max-width: 560px) {
@@ -43,6 +47,7 @@ input:focus {
 .playlistContainer {
   /* padding: 100px 300px; */
   margin: 100px 200px 40px 200px;
+  text-align: center;
 }
 
 

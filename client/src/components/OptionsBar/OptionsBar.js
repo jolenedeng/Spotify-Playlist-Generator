@@ -2,7 +2,50 @@ import React from 'react';
 import './OptionsBar.css';
 
 const options = {
-    genres: ['acoustic', 'alt-rock', 'alternative', 'ambient', 'chill', 'dance', 'electro', 'groove', 'hip-hop', 'indie', 'k-pop', 'soul', 'study', 'synth-pop']
+    genres: [
+        "acoustic",
+        "alt-rock",
+        "alternative",
+        "ambient",
+        "blues",
+        "breakbeat",
+        "british",
+        "chill",
+        "classical",
+        "club",
+        "country",
+        "dance",
+        "deep-house",
+        "disco",
+        "drum-and-bass",
+        "dub",
+        "dubstep",
+        "edm",
+        "electro",
+        "emo",
+        "folk",
+        "funk",
+        "grunge",
+        "hard-rock",
+        "heavy-metal",
+        "hip-hop",
+        "house",
+        "indie",
+        "indie-pop",
+        "jazz",
+        "new-age",
+        "pop",
+        "progressive-house",
+        "r-n-b",
+        "road-trip",
+        "rock",
+        "romance",
+        "soul",
+        "study",
+        "summer",
+        "synth-pop",
+        "techno",
+      ]
 };
 
 class OptionsBar extends React.Component {

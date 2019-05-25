@@ -1,3 +1,7 @@
+.savePlaylistButton {
+    margin: 50px 0px;
+}
+
 .savePlaylistButton a {
     text-decoration: none;
     border-radius: 4px;
@@ -10,5 +14,6 @@
 
 .savePlaylistButton a:hover{
     cursor: pointer;
-    background-color: lightblue;
+    background: linear-gradient(to left,#EA8D8D,#A890FE);
 }
+

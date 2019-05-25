@@ -2,12 +2,25 @@ import React from 'react';
 import './SavePlaylistButton.css';
 
 class SavePlaylistButton extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    
+    handleClick() {
+        this.props.savePlaylist();
+    }
+
     render() {
-        return (
-            <div className="savePlaylistButton">
-                <a href="#">Save playlist</a>
-            </div>
-        )
+        const {hasSongs} = this.props;
+        
+        if (hasSongs) {
+            return (
+                <div className="savePlaylistButton">
+                    <a href="#" onClick={this.handleClick}>Save playlist</a>
+                </div>
+            )
+            }
+        else return null;
     }
 }
 

@@ -34,16 +34,27 @@ class App extends React.Component {
                   id: track.id,
                   name: track.name,
                   artist: track.artists[0].name,
-                  albumSrc: track.album.images[0].url
+                  albumSrc: track.album.images[0].url,
+                  uri: track.uri
                 }
               })
             })
           }) 
     }
 
-    addPlaylistToAccount() {
-      // stub
-    }
+    savePlaylist() {
+      if (this.state.songs.length > 0) {
+        spotifyApi.createPlaylist()
+          .then( (data) => {
+            let id = data.id;
+            let uris = this.state.songs.map( song => song.uri );
+
+            spotifyApi.addTracksToPlaylist(id, uris)})
+            .then( (data) => {
+                console.log(data);
+            })
+          }
+      }
 
     getHashParams() { 
       var hashParams = {};
@@ -64,11 +75,11 @@ class App extends React.Component {
         <div className="optionsBarContainer">
           < OptionsBar getRecommendations={this.getRecommendations} />
         </div>
-        <div className="playlistOuterContainer">
-          <div className="playlistContainer">
-            < Playlist songs={this.state.songs} addPlaylistToAccount={this.addPlaylistToAccount}/>
-          </div>
+        <div className="playlistContainer">
+          < Playlist songs={this.state.songs}/>
+          < SavePlaylistButton savePlaylist={this.savePlaylist} hasSongs={this.state.songs.length > 0 ? true : false}/>
         </div>
+
         <div className="footer"></div>
       </div>
     )
