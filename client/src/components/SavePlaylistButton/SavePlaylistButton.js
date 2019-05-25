@@ -6,7 +6,6 @@ class SavePlaylistButton extends React.Component {
         super(props);
     }
 
-    
     render() {
         const {hasSongs} = this.props;
         
@@ -16,7 +15,7 @@ class SavePlaylistButton extends React.Component {
                     <a href="#" onClick={this.props.savePlaylist}>Save playlist</a>
                 </div>
             )
-            }
+        }
         else return null;
     }
 }

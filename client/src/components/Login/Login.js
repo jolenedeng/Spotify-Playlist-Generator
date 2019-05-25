@@ -14,7 +14,7 @@ class Login extends React.Component {
         }
 
         return (
-            <div className="loggedIn">
+            <div className="loggedIn">☺
             </div>
         )
     }

@@ -8,6 +8,7 @@
  */
 var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
+const path = require('path');
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
@@ -37,7 +38,7 @@ var stateKey = 'spotify_auth_state';
 
 var app = express();
 
-app.use(express.static(__dirname + 'client/public'))
+app.use(express.static(path.join(__dirname, '/../client/build')))
    .use(cors())
    .use(cookieParser());
 
@@ -104,7 +105,7 @@ app.get('/callback', function(req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('http://localhost:3000/#' +
+        res.redirect('http://localhost:8888/#' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
@@ -117,11 +118,6 @@ app.get('/callback', function(req, res) {
       }
     });
   }
-});
-
-app.get('/', function(req, res){
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
 });
 
 app.get('/refresh_token', function(req, res) {
@@ -146,6 +142,10 @@ app.get('/refresh_token', function(req, res) {
       });
     }
   });
+});
+
+app.get('*', (req,res) =>{
+  res.sendFile(path.join(__dirname+'/../client/build/index.html'));
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
