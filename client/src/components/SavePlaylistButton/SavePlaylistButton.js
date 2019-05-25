@@ -7,12 +7,21 @@ class SavePlaylistButton extends React.Component {
     }
 
     render() {
-        const { hasSongs } = this.props;
+        const { hasSongs, show } = this.props;
         
-        if (hasSongs) {
+        // Show save playlist button if there is a playlist and it has not been saved
+        if (hasSongs && show) {
             return (
                 <div className="savePlaylistButton">
                     <a href="#" onClick={this.props.savePlaylist}>Save playlist</a>
+                </div>
+            )
+        }
+        // Show saved if there is a playlist and it has been saved
+        else if (hasSongs) {
+            return (
+                <div className="saved">
+                    <p>Playlist was saved to your account ☺</p>
                 </div>
             )
         }

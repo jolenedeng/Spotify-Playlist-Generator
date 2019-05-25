@@ -6,7 +6,6 @@ import Playlist from './components/Playlist/Playlist';
 import SavePlaylistButton from './components/SavePlaylistButton/SavePlaylistButton';
 import './App.css';
 
-
 const spotifyApi = new SpotifyWebApi();
 
 class App extends React.Component {
@@ -17,7 +16,8 @@ class App extends React.Component {
       user_name: "",
       loggedIn: false,
       genres: [],
-      songs: []
+      songs: [],
+      playlistSaved: false
       }
     }
 
@@ -64,7 +64,9 @@ class App extends React.Component {
               }),
               genres: selected
             })
-          }) 
+          })
+      
+          this.setState({playlistSaved: false});
     }
 
     savePlaylist = (e) => {
@@ -86,7 +88,9 @@ class App extends React.Component {
             .then( (data) => {
                 console.log(data);
             })
-          }
+
+          this.setState({playlistSaved: true});
+        }
     }
 
     play = (uri) => {
@@ -126,7 +130,7 @@ class App extends React.Component {
         </div>
         <div className="playlistContainer">
           < Playlist songs={this.state.songs} spotify={spotifyApi} play={this.play} pause={this.pause} />
-          < SavePlaylistButton savePlaylist={this.savePlaylist} hasSongs={this.state.songs.length > 0 ? true : false}/>
+          < SavePlaylistButton savePlaylist={this.savePlaylist} hasSongs={this.state.songs.length > 0 ? true : false} show={!this.state.playlistSaved}/>
         </div>
 
         <div className="footer">

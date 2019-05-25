@@ -17,8 +17,6 @@ class Playlist extends React.Component {
                           {songs.map((song) => {
                             return <Song key={song.id} song={song} play={this.props.play} pause={this.props.pause}/>
                           })}
-                     <div className="playlistButton">
-                     </div>   
                 </div>
 
             )
