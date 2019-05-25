@@ -15,12 +15,10 @@ var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 require('dotenv').config();
 
-const port = process.env.PORT;
+const port = process.env.PORT || 8888;
 
-const redirect_uri = `http://localhost:${port}/callback`; // Your redirect uri
+const redirect_uri = `http://localhost:${port}/callback`;
 
-// var client_id = '0bcc1b187a464fa98da101edde97c202';
-// var client_secret = '7e4c54bd81b749079fffe9c4a7b5cead';
 var client_id = process.env.CLIENT_ID;
 var client_secret = process.env.CLIENT_SECRET;
 

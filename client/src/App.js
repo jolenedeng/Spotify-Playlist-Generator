@@ -4,7 +4,7 @@ import Login from './components/Login/Login';
 import OptionsBar from './components/OptionsBar/OptionsBar';
 import Playlist from './components/Playlist/Playlist';
 import SavePlaylistButton from './components/SavePlaylistButton/SavePlaylistButton';
-import './App.css'
+import './App.css';
 
 
 const spotifyApi = new SpotifyWebApi();
@@ -129,7 +129,8 @@ class App extends React.Component {
           < SavePlaylistButton savePlaylist={this.savePlaylist} hasSongs={this.state.songs.length > 0 ? true : false}/>
         </div>
 
-        <div className="footer"></div>
+        <div className="footer">
+        </div>
       </div>
     )
   }

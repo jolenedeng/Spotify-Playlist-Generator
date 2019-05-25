@@ -51,7 +51,7 @@ input:focus {
 }
 
 
-.footer {
+/* .footer {
   background-color: #FF8C8C;
   display: flex;
   flex-direction: row-reverse;
@@ -64,5 +64,5 @@ input:focus {
 }
 
 .footer a {
-  margin: 100px;
-}
+  margin: 50px;
+} */
