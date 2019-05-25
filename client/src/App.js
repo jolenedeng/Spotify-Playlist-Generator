@@ -43,8 +43,7 @@ class App extends React.Component {
           }) 
     }
 
-    savePlaylist() {
-      console.log(this.state.songs);
+    savePlaylist = () => {
       if (this.state.songs.length > 0) {
         spotifyApi.createPlaylist()
           .then( (data) => {

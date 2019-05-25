@@ -5,6 +5,7 @@ class SavePlaylistButton extends React.Component {
     constructor(props) {
         super(props);
     }
+
     
     render() {
         const {hasSongs} = this.props;
