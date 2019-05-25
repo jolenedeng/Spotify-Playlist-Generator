@@ -4,8 +4,10 @@
     justify-content: space-between;
 }
 
-.active {
-    border: 5px solid blueviolet;
+Create the animation blocks
+@keyframes spin {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
 }
 
 .songInfo {
@@ -36,15 +38,24 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 20px;
 }
 
 .btn {
+    border: 0;
+    background: transparent;
     background-color: white;
     border-radius: 50%;
-    padding: 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
+    cursor: pointer;
+    outline: none;
+}
+
+.btnImg {
+    width: 50px;
+    height: 50px;
 }

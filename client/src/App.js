@@ -15,6 +15,7 @@ class App extends React.Component {
     const params = this.getHashParams();
     spotifyApi.setAccessToken(params.access_token);
     this.state = {
+      genres: [],
       songs: [],
       loggedIn: params.access_token ? true : false
       }
@@ -38,14 +39,24 @@ class App extends React.Component {
                   albumSrc: track.album.images[0].url,
                   uri: track.uri
                 }
-              })
+              }),
+              genres: selected
             })
           }) 
     }
 
-    savePlaylist = () => {
+    savePlaylist = (e) => {
+      e.preventDefault();
+
       if (this.state.songs.length > 0) {
-        spotifyApi.createPlaylist()
+        // todo: Get user id
+        const userId = "";
+        const body = {
+          name: "My perfect playlist ♡",
+          description: `A perfect mix of... ${this.state.genres.join(', ')}!`
+        } 
+
+        spotifyApi.createPlaylist(userId, body)
           .then( (data) => {
             let id = data.id;
             let uris = this.state.songs.map( song => song.uri );
@@ -55,7 +66,23 @@ class App extends React.Component {
                 console.log(data);
             })
           }
-      }
+    }
+
+    play = (uri) => {
+      let options = {
+        "uris": [uri]
+      };
+
+      spotifyApi.play(options);
+    };
+
+    pause = (uri) => {
+      let options = {
+        "uris": [uri]
+      };
+
+      spotifyApi.pause(options);
+    };
 
     getHashParams() { 
       var hashParams = {};
@@ -77,7 +104,7 @@ class App extends React.Component {
           < OptionsBar getRecommendations={this.getRecommendations} />
         </div>
         <div className="playlistContainer">
-          < Playlist songs={this.state.songs}/>
+          < Playlist songs={this.state.songs} spotify={spotifyApi} play={this.play} pause={this.pause} />
           < SavePlaylistButton savePlaylist={this.savePlaylist} hasSongs={this.state.songs.length > 0 ? true : false}/>
         </div>
 
