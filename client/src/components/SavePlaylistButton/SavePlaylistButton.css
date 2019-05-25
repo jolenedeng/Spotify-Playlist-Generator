@@ -15,5 +15,6 @@
 .savePlaylistButton a:hover{
     cursor: pointer;
     background: linear-gradient(to left,#EA8D8D,#A890FE);
+    font-weight: bold;
 }
 

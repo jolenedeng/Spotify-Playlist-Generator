@@ -39,14 +39,20 @@ h1 {
     transition: all 0.2s;
 }
 
+
 .optionsBar-options li:hover {
-    background-color:palevioletred;
+    /* background-color:palevioletred; */
+    background: linear-gradient( to left,#EA8D8D,#A890FE);
+    background-repeat: no-repeat;
 }
 
 .optionsBar-options li.active,
 .optionsBar-options li.active:hover {
     border: 1px solid white;
-    background-color: palevioletred;;
+    background: linear-gradient( to left, #EA8D8D,#A890FE);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-weight: bold;
 }
 
 .optionsBar-submit {

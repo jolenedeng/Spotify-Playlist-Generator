@@ -11,14 +11,12 @@ var request = require('request'); // "Request" library
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
-var config = require('./config.js'); // Config
 const port = 8888;
 
-// var client_id = `${config.client_id}`; // Your client id
+const redirect_uri = 'http://localhost:' + port + '/callback'; // Your redirect uri
+
 var client_id = '0bcc1b187a464fa98da101edde97c202';
-// var client_secret = `${config.client_secret}`; // Your secret
 var client_secret = '7e4c54bd81b749079fffe9c4a7b5cead';
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -39,7 +37,7 @@ var stateKey = 'spotify_auth_state';
 
 var app = express();
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + 'client/public'))
    .use(cors())
    .use(cookieParser());
 
@@ -112,13 +110,18 @@ app.get('/callback', function(req, res) {
             refresh_token: refresh_token
           }));
       } else {
-        res.redirect('/#' +
+        res.redirect('/?' +
           querystring.stringify({
             error: 'invalid_token'
           }));
       }
     });
   }
+});
+
+app.get('/', function(req, res){
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
 });
 
 app.get('/refresh_token', function(req, res) {

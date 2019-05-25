@@ -6,17 +6,13 @@ class SavePlaylistButton extends React.Component {
         super(props);
     }
     
-    handleClick() {
-        this.props.savePlaylist();
-    }
-
     render() {
         const {hasSongs} = this.props;
         
         if (hasSongs) {
             return (
                 <div className="savePlaylistButton">
-                    <a href="#" onClick={this.handleClick}>Save playlist</a>
+                    <a href="#" onClick={this.props.savePlaylist}>Save playlist</a>
                 </div>
             )
             }

@@ -27,9 +27,10 @@ class App extends React.Component {
 
       spotifyApi.getRecommendations(options)
           .then( (data) => {
+            console.log(data.tracks);
+
             this.setState({
               songs: data.tracks.map(track => {
-                console.log(data.tracks)
                 return {
                   id: track.id,
                   name: track.name,
@@ -43,6 +44,7 @@ class App extends React.Component {
     }
 
     savePlaylist() {
+      console.log(this.state.songs);
       if (this.state.songs.length > 0) {
         spotifyApi.createPlaylist()
           .then( (data) => {

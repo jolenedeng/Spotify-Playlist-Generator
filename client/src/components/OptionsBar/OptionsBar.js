@@ -89,25 +89,25 @@ class OptionsBar extends React.Component {
     }
 
     render() {
-        return (
-            <div className="optionsBar">
-                <div className="optionsBar-title">
-                    <h1>Select up to 5 genres</h1>
+            return (
+                <div className="optionsBar">
+                    <div className="optionsBar-title">
+                        <h1>Select up to 5 genres</h1>
+                    </div>
+                    <div className="optionsBar-options">
+                        <ul>
+                            { options.genres.map( (genre) => {
+                                return <li  key={genre}
+                                            onClick={this.handleOptionClick.bind(this, genre)}
+                                            className={this.getOptionClass(genre)}
+                                        >{genre}</li>})}
+                        </ul>
+                    </div>
+                    <div className="optionsBar-submit">
+                        <a href="#" onClick={this.handleSearch}>Create my perfect playlist ♡</a>
+                    </div>
                 </div>
-                <div className="optionsBar-options">
-                    <ul>
-                        { options.genres.map( (genre) => {
-                            return <li  key={genre}
-                                        onClick={this.handleOptionClick.bind(this, genre)}
-                                        className={this.getOptionClass(genre)}
-                                    >{genre}</li>})}
-                    </ul>
-                </div>
-                <div className="optionsBar-submit">
-                    <a href="#" onClick={this.handleSearch}>Create my perfect playlist ♡</a>
-                </div>
-            </div>
-        )
+            )
     }
 }
 
