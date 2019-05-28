@@ -4,13 +4,13 @@ Web app that allows users to pick mood/genres and generates a playlist. Built us
 
 Features include: Track playback and option to save playlist into account.
 
-## Download instructions:
+## Instructions:
 
 ```
 cd auth-server
 npm start
 ```
-Visit localhost:8888
+Visit localhost:8888.
 
 ### Site preview
 
