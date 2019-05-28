@@ -126,7 +126,7 @@ class App extends React.Component {
           < Login loggedIn={this.state.loggedIn}/>
         </div>  
         <div className="optionsBarContainer">
-          < OptionsBar getRecommendations={this.getRecommendations} name={this.state.user_name}/>
+          < OptionsBar getRecommendations={this.getRecommendations} name={this.state.user_name} loggedIn={this.state.loggedIn}/>
         </div>
         <div className="playlistContainer">
           < Playlist songs={this.state.songs} spotify={spotifyApi} play={this.play} pause={this.pause} />

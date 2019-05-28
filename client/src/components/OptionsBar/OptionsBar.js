@@ -89,30 +89,38 @@ class OptionsBar extends React.Component {
     }
 
     render() {
-            const {name} = this.props;
+            const {name, loggedIn} = this.props;
             var fullName = name.split(' ');
             var firstName = fullName[0];
 
-            return (
-                <div className="optionsBar">
-                    <div className="optionsBar-title">
-                        <h1>Hi, {firstName}. What are you feeling like?</h1>
-                        <h3>You may select up to 5 genres.</h3>
+            if (loggedIn) {
+                return (
+                    <div className="optionsBar">
+                        <div className="optionsBar-title">
+                            <h1>Hi, {firstName}. What are you feeling like?</h1>
+                            <h3>You may select up to 5 genres.</h3>
+                        </div>
+                        <div className="optionsBar-options">
+                            <ul>
+                                { options.genres.map( (genre) => {
+                                    return <li  key={genre}
+                                                onClick={this.handleOptionClick.bind(this, genre)}
+                                                className={this.getOptionClass(genre)}
+                                            >{genre}</li>})}
+                            </ul>
+                        </div>
+                        <div className="optionsBar-submit">
+                            <a href="#" onClick={this.handleSearch}>Create my perfect playlist ♡</a>
+                        </div>
                     </div>
-                    <div className="optionsBar-options">
-                        <ul>
-                            { options.genres.map( (genre) => {
-                                return <li  key={genre}
-                                            onClick={this.handleOptionClick.bind(this, genre)}
-                                            className={this.getOptionClass(genre)}
-                                        >{genre}</li>})}
-                        </ul>
-                    </div>
-                    <div className="optionsBar-submit">
-                        <a href="#" onClick={this.handleSearch}>Create my perfect playlist ♡</a>
-                    </div>
-                </div>
-            )
+                )
+            }
+            else {
+                return (
+                <div className="notLoggedIn">
+                    <h1>Please login with spotify.</h1>
+                </div>)
+            }
     }
 }
 
