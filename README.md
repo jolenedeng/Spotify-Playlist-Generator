@@ -11,3 +11,5 @@ cd auth-server
 npm start
 ```
 Visit localhost:8888
+
+![ScreenShot](https://raw.github.com/jolenedeng/Spotify-Playlist-Generator/master/screenshots/example.png)
