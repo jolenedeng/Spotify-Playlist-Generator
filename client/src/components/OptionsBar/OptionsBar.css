@@ -1,11 +1,20 @@
 h1 {
     color: white;
+    font-family: Nunito, sans-serif;
+    text-align: center;
     font-size: 30px;
+    margin: .66rem 0;
+    text-align: center;
+    font-style: italic;
+}
+
+h3 {
+    color: white;
+    font-size: 15px;
     padding: .66rem 0;
     text-align: center;
     font-family: Nunito, sans-serif;
-    font-size: 1.8rem;
-    color: #fff;
+    font-size: 1.0rem;
 }
 
 .optionsBar {
@@ -34,14 +43,14 @@ h1 {
     text-decoration: none;
     font-family: 'Roboto',sans-serif;
     font-weight: 300;
-    background-color: lightpink;
+    background-color: rgb(177, 175, 226);
     text-align: center;
     transition: all 0.2s;
+    color: white;
 }
 
 
 .optionsBar-options li:hover {
-    /* background-color:palevioletred; */
     background: linear-gradient( to left,#EA8D8D,#A890FE);
     background-repeat: no-repeat;
 }
@@ -65,7 +74,7 @@ h1 {
     border-radius: 2em;
     padding: .72rem 1.7rem;
     color: #ffffff;
-    background-color: pink;
+    background-color: rgb(177, 175, 226);
     font-weight: 600;
     transition: background-color .5s;
 }

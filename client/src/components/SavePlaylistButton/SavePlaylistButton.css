@@ -7,7 +7,7 @@
     border-radius: 40px;
     padding: .72rem 1.7rem;
     color: #ffffff;
-    background-color: pink;
+    background-color: rgb(177, 175, 226);
     font-weight: 600;
     transition: background-color .5s;
 }

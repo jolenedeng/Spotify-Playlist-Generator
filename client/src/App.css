@@ -12,7 +12,8 @@ html, body {
 }
 
 body {
-  background: linear-gradient(#FF8C8C, #F1EAB9);
+  /* background: linear-gradient(#FF8C8C, #F1EAB9); */
+  background: linear-gradient(#95DCE9, #976EC1);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

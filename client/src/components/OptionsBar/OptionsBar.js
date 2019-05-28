@@ -89,10 +89,15 @@ class OptionsBar extends React.Component {
     }
 
     render() {
+            const {name} = this.props;
+            var fullName = name.split(' ');
+            var firstName = fullName[0];
+
             return (
                 <div className="optionsBar">
                     <div className="optionsBar-title">
-                        <h1>Select up to 5 genres</h1>
+                        <h1>Hi, {firstName}. What are you feeling like?</h1>
+                        <h3>You may select up to 5 genres.</h3>
                     </div>
                     <div className="optionsBar-options">
                         <ul>
