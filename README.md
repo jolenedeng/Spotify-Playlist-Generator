@@ -12,4 +12,6 @@ npm start
 ```
 Visit localhost:8888
 
+This is a preview of the site.
+
 ![example](https://user-images.githubusercontent.com/32408688/58453565-7bcb8880-80d0-11e9-9111-287af5c8d33a.png)
