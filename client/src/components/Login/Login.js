@@ -6,7 +6,7 @@ class Login extends React.Component {
         if (!this.props.loggedIn) {
             return (
                 <div className="login">
-                    <a href="http://localhost:8888/login">
+                    <a href="https://spotify-perfect-playlist.herokuapp.com/login">
                         Login with Spotify
                     </a>
                 </div>
