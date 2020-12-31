@@ -1,1 +1,1 @@
-web: cd auth-server && npm start
+web: npm start
